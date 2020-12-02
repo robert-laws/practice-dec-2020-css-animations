@@ -1,0 +1,35 @@
+{
+  "name": "practice-dec-2020-css-animations",
+  "version": "1.0.0",
+  "description": "examples of different animations using CSS",
+  "main": "index.js",
+  "scripts": {
+    "watch-sass": "node-sass sass/main.scss css/style.css --source-map true --watch",
+    "dev-compile-sass": "node-sass sass/main.scss css/style.css --source-map true",
+    "compile-sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat-css": "concat -o css/style.concat.css css/additional.css css/style.comp.css",
+    "prefix-css": "postcss --use autoprefixer -b 'last 5 versions' css/style.concat.css -o css/style.prefix.css",
+    "compress-css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build-css": "npm-run-all compile-sass concat-css prefix-css compress-css",
+    "dev-css": "npm-run-all dev-compile-sass watch-sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robert-laws/practice-dec-2020-css-animations.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robert-laws/practice-dec-2020-css-animations/issues"
+  },
+  "homepage": "https://github.com/robert-laws/practice-dec-2020-css-animations#readme",
+  "dependencies": {
+    "autoprefixer": "^10.0.4",
+    "concat": "^1.0.3",
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.1.10",
+    "postcss-cli": "^8.3.0"
+  }
+}
