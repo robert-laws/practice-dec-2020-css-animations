@@ -1,0 +1,71 @@
+.robot {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+
+  &:hover img {
+    transform: scale(8);
+    opacity: 0;
+    transition: all 0.7s ease-in-out;
+  }
+
+  img {
+    width: 100%;
+    object-fit: contain;
+    transform: scale(0.8);
+    transition: all 0.7s ease-in-out;
+  }
+
+  &:hover .mask {
+    opacity: 1;
+  }
+
+  .mask {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-color: rgba(38, 95, 142, 0.4);
+    transition: all 0.5s linear;
+    opacity: 0;
+
+    &:hover h2,
+    &:hover .shop {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    h2 {
+      font-size: 3rem;
+      margin: 20px 40px 20px 40px;
+      transform: scale(0);
+      color: #333;
+      transition: all 0.5s linear;
+      opacity: 0;
+    }
+
+    .shop {
+      display: inline-block;
+      text-decoration: none;
+      padding: 7px 14px;
+      background: #000;
+      color: #fff;
+      text-transform: uppercase;
+      box-shadow: 0 0 1px #000;
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.5s linear;
+
+      &:hover {
+        background: #fff;
+        color: #333;
+      }
+    }
+  }
+}

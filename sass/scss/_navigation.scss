@@ -1,0 +1,43 @@
+$nav-transition: all 0.2s ease-out;
+
+nav {
+  width: 100%;
+  height: 70px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  a {
+    font-size: 1.6rem;
+    padding-bottom: 0.7rem;
+    text-decoration: none;
+    font-weight: 700;
+    color: #3a3a3d;
+    position: relative;
+    transition: $nav-transition;
+    overflow: hidden;
+
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 7px;
+      background-color: rgba(255, 88, 61, 0.5);
+      transform: translateX(-200%);
+      transition: $nav-transition;
+    }
+
+    &:hover {
+      color: #ff583d;
+      transition: $nav-transition;
+    }
+
+    &:hover:after {
+      transition: $nav-transition;
+      transform: translateX(0%);
+    }
+  }
+}
