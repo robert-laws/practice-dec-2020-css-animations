@@ -1,0 +1,64 @@
+@keyframes colors {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: lightcoral;
+  }
+  100% {
+    background-color: blue;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.keyframe-example {
+  div {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+
+    &:hover {
+      animation: colors 2s ease-out both, spin 1s ease-in-out;
+    }
+
+    p {
+      font-size: 2rem;
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+}
+
+.keyframe-example-2 {
+  div {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    transition: background-color 0.5s ease-out;
+
+    &:hover {
+      background-color: red;
+      transition: background-color 2s ease-out;
+    }
+
+    p {
+      font-size: 2rem;
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+}
